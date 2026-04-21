@@ -1,0 +1,10 @@
+{
+  "name": "nextjs-cloudflare-stack",
+  "main": "app/api/[[...routes]]/route.ts",
+  "minify": true,
+  "compatibility_date": "2026-04-21",
+  "compatibility_flags": ["nodejs_compat"],
+  "observability": {
+    "enabled": true
+  }
+}
