@@ -2,8 +2,6 @@
 import app from "@/server/hono/app";
 import { handle } from "hono/vercel";
 
-export const runtime = "edge";
-
 export default app as never;
 
 export const GET = handle(app);
