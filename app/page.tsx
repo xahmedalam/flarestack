@@ -21,7 +21,13 @@ export default function Home() {
     <main>
       <h1>Next.js + Hono + Cloudflare Workers Stack</h1>
       <button onClick={getTasks}>Get Tasks</button>
-      <p>{JSON.stringify(tasks)}</p>
+      <ul>
+        {tasks.map((task) => (
+          <li key={task.id}>
+            ID: {task.id}, Title: {task.title}
+          </li>
+        ))}
+      </ul>
     </main>
   );
 }

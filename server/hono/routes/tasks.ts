@@ -12,6 +12,7 @@ type Task = {
 const tasks: Task[] = [
   { id: 1, title: "Learn Hono" },
   { id: 2, title: "Use with Next.js" },
+  { id: 3, title: "Build a REST API" },
 ];
 
 const createTaskSchema = z.object({
