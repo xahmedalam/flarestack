@@ -20,6 +20,7 @@ export default function Home() {
   return (
     <main>
       <h1>Next.js + Hono + Cloudflare Workers Stack</h1>
+      <h2>---PR TEST 2---</h2>
       <button onClick={getTasks}>Get Tasks</button>
       <ul>
         {tasks.map((task) => (
