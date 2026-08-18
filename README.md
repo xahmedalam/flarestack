@@ -1,4 +1,4 @@
-# Next.js + Hono + Cloudflare Workers Template
+# Flarestack
 
 A production-ready template for building Next.js applications with Hono API routes, deployed to Cloudflare Workers via [OpenNext](https://opennext.js.org/cloudflare).
 
