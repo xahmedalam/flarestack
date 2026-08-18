@@ -2,12 +2,13 @@
   "name": "nextjs-hono-cloudflare-stack",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.22.0",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check": "concurrently --names \"lint,typecheck,format\" --prefix-colors \"yellow,blue,green\" \"npm run lint\" \"tsc --noEmit\" \"npm run format:check\"",
+    "check": "concurrently --names \"lint,typecheck,format\" --prefix-colors \"yellow,blue,green\" \"pnpm lint\" \"tsc --noEmit\" \"pnpm format:check\"",
     "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,css}\" --cache",
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx,css}\" --cache",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
@@ -35,13 +36,5 @@
     "tailwindcss": "^4",
     "typescript": "^5",
     "wrangler": "^4.118.0"
-  },
-  "ignoreScripts": [
-    "sharp",
-    "unrs-resolver"
-  ],
-  "trustedDependencies": [
-    "sharp",
-    "unrs-resolver"
-  ]
+  }
 }

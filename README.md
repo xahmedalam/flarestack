@@ -28,13 +28,13 @@ wrangler.jsonc                  # Cloudflare Worker config
 1. Install dependencies:
 
 ```bash
-bun install
+pnpm install
 ```
 
 2. Run the development server:
 
 ```bash
-bun dev
+pnpm dev
 ```
 
 3. Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -60,8 +60,8 @@ const tasks = await res.json();
 ## Checks
 
 ```bash
-bun run check          # lint + typecheck + format check
-bun run format:write   # auto-format
+pnpm run check          # lint + typecheck + format check
+pnpm run format:write   # auto-format
 ```
 
 ## Deployment
@@ -71,13 +71,13 @@ The entire Next.js app (frontend + API) is deployed as a single Cloudflare Worke
 1. Preview locally with the Cloudflare runtime:
 
 ```bash
-bun run preview
+pnpm run preview
 ```
 
 2. Deploy to production:
 
 ```bash
-bun run deploy
+pnpm run deploy
 ```
 
 Requires `wrangler` to be authenticated. The included GitHub Actions workflow deploys automatically on push to `main`; set the `CLOUDFLARE_API_TOKEN` and `CLOUDFLARE_ACCOUNT_ID` secrets in your repository for CI deployments.
