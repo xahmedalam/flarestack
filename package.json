@@ -1,5 +1,5 @@
 {
-  "name": "nextjs-hono-cloudflare-stack",
+  "name": "flarestack",
   "version": "0.1.0",
   "private": true,
   "packageManager": "pnpm@11.22.0",
