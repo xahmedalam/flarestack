@@ -14,6 +14,8 @@ const eslintConfig = defineConfig([
     "next-env.d.ts",
     // OpenNext build artifacts:
     ".open-next/**",
+    // CLI package has its own eslint config:
+    "cli/**",
   ]),
 ]);
 

@@ -2,6 +2,20 @@
 
 A production-ready template for building Next.js applications with Hono API routes, deployed to Cloudflare Workers via [OpenNext](https://opennext.js.org/cloudflare).
 
+## Quick start
+
+Scaffold a new app with the CLI:
+
+```bash
+npm create flarestack@latest
+# or
+pnpm create flarestack@latest my-app
+# or scaffold into the current directory
+pnpm create flarestack@latest .
+```
+
+The CLI asks for a project name (or takes one as an argument), auto-detects the package manager you invoked it with (npm/pnpm/bun/yarn), and optionally initializes git and installs dependencies.
+
 ## Features
 
 - Next.js 16 with App Router
@@ -21,7 +35,24 @@ server/hono/routes/             # Route handlers (hello, tasks)
 lib/api-client.ts               # Type-safe API client
 open-next.config.ts             # OpenNext Cloudflare config
 wrangler.jsonc                  # Cloudflare Worker config
+cli/                            # create-flarestack CLI (published separately)
 ```
+
+## Publishing the CLI
+
+The CLI lives in `cli/` and is published to npm as `create-flarestack`.
+
+1. Bump the version in `cli/package.json`.
+2. Tag and push:
+
+```bash
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+The `Publish CLI to npm` workflow (`.github/workflows/publish.yml`) validates that the tag matches `cli/package.json`, then publishes with npm provenance. It can also be triggered manually from the Actions tab.
+
+Set the `NPM_TOKEN` secret (an npm access token with publish permissions) in your repository settings.
 
 ## Usage
 
