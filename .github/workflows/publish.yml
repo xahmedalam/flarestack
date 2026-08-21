@@ -1,0 +1,48 @@
+name: Publish CLI to npm
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "v*"
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      id-token: write
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          registry-url: https://registry.npmjs.org
+
+      - name: Install CLI dependencies
+        working-directory: cli
+        run: pnpm install --frozen-lockfile
+
+      - name: Lint CLI
+        working-directory: cli
+        run: pnpm run check
+
+      - name: Check version matches tag
+        if: github.event_name == 'push'
+        working-directory: cli
+        run: |
+          pkg_version="$(node -p "require('./package.json').version")"
+          tag="${GITHUB_REF_NAME#v}"
+          if [ "$tag" != "$pkg_version" ]; then
+            echo "::error::Tag '${GITHUB_REF_NAME}' does not match cli/package.json version '${pkg_version}'"
+            exit 1
+          fi
+
+      - name: Publish to npm
+        working-directory: cli
+        run: npm publish --access public --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}

@@ -20,7 +20,6 @@ export default function Home() {
   return (
     <main>
       <h1>Flarestack</h1>
-      <h2>---PR TEST 2---</h2>
       <button onClick={getTasks}>Get Tasks</button>
       <ul>
         {tasks.map((task) => (
