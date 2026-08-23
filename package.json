@@ -9,8 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "check": "concurrently --names \"lint,typecheck,format\" --prefix-colors \"yellow,blue,green\" \"pnpm lint\" \"tsc --noEmit\" \"pnpm format:check\"",
-    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,css}\" --cache",
-    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx,css}\" --cache",
+    "format:write": "prettier --write \"**/*.{ts,tsx,js,jsx,mdx,css,json,jsonc}\" --cache",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,mdx,css,json,jsonc}\" --cache",
     "preview": "opennextjs-cloudflare build && opennextjs-cloudflare preview",
     "deploy": "opennextjs-cloudflare build && opennextjs-cloudflare deploy",
     "cf-typegen": "wrangler types --env-interface CloudflareEnv cloudflare-env.d.ts"
